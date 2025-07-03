@@ -22,7 +22,7 @@ export function ToolLayout({ tool, children, language = 'zh' }: ToolLayoutProps)
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
+        <div className="container flex h-16 items-center justify-between mx-auto">
           <div className="flex items-center gap-4">
             <Link href="/">
               <Button variant="ghost" size="sm">
@@ -42,7 +42,7 @@ export function ToolLayout({ tool, children, language = 'zh' }: ToolLayoutProps)
       </header>
 
       {/* Main content */}
-      <main className="container py-6">
+      <main className="container py-6 mx-auto">
         <div className="max-w-4xl mx-auto">
           {children}
         </div>
