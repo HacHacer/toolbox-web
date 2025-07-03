@@ -29,7 +29,7 @@ export default function RegexTesterPage() {
       const result = testText.match(regex) || [];
       setMatches(result);
       setError("");
-    } catch (e) {
+    } catch {
       setError("正则表达式无效 / Invalid RegExp");
       setMatches([]);
     }

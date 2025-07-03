@@ -43,7 +43,7 @@ export default function JsonPrettyPage() {
         formattedSize,
         compressionRatio
       });
-    } catch (err) {
+    } catch {
       setError("无效的JSON格式 / Invalid JSON format");
       setOutputJson("");
     }
@@ -67,7 +67,7 @@ export default function JsonPrettyPage() {
         formattedSize: minifiedSize,
         compressionRatio
       });
-    } catch (err) {
+    } catch {
       setError("无效的JSON格式 / Invalid JSON format");
       setOutputJson("");
     }
@@ -80,7 +80,7 @@ export default function JsonPrettyPage() {
       JSON.parse(inputJson);
       setError("");
       return true;
-    } catch (err) {
+    } catch {
       setError("JSON格式错误 / JSON syntax error");
       return false;
     }
@@ -245,9 +245,9 @@ export default function JsonPrettyPage() {
                 <div>
                   <div className="font-medium mb-2">对象 / Objects</div>
                   <div className="space-y-1 text-muted-foreground font-mono">
-                    <div>{"{"}</div>
-                    <div>  "key": "value"</div>
-                    <div>{"}"}</div>
+                    <div>{'{'} </div>
+                    <div>  key: &quot;value&quot;</div>
+                    <div>{'}'}</div>
                   </div>
                 </div>
               </div>

@@ -31,7 +31,7 @@ export default function YamlToJsonPage() {
       const json = JSON.stringify(obj, null, 2);
       setJsonOutput(json);
       setError("");
-    } catch (e) {
+    } catch {
       setError("YAML 解析失败 / YAML parse error");
       setJsonOutput("");
     }
@@ -44,7 +44,7 @@ export default function YamlToJsonPage() {
       const yml = yaml.dump(obj);
       setYamlOutput(yml);
       setError("");
-    } catch (e) {
+    } catch {
       setError("JSON 解析失败 / JSON parse error");
       setYamlOutput("");
     }

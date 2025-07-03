@@ -89,11 +89,13 @@ $$
     html = html.replace(/^- (.*$)/gim, '<li>$1</li>');
     html = html.replace(/^(\d+)\. (.*$)/gim, '<li>$2</li>');
 
-    // Wrap lists
-    html = html.replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>');
+    // 包裹列表
+    // 由于 /s 标志在低版本 TypeScript/JS 不支持，改用非贪婪匹配和多行模式
+    // 先处理连续的 <li> 标签为 <ul>
+    html = html.replace(/((?:<li>.*?<\/li>\s*)+)/gm, '<ul>$1</ul>');
 
-    // Paragraphs
-    html = html.replace(/\n\n/g, '</p><p>');
+    // 段落处理
+    html = html.replace(/\n{2,}/g, '</p><p>');
     html = '<p>' + html + '</p>';
 
     // Line breaks
